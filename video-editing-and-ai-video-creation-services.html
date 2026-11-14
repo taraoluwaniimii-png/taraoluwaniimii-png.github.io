@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Video Editing and AI Video Creation Services, Nafisat Amuda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5f2ec; --surface:#fdfcf9; --surface2:#ede8de; --ink:#2b2723; --muted:#6b655d;
+    --teal:#2e2a26; --teal2:#5c554d; --coral:#8c734f; --coral-soft:#e8ddcc; --amber:#b9976b;
+    --teal-soft:#e6dfd3; --line:#d6cfc2; --chip:#ffffff; --good:#7d8471;
+    --shadow:0 18px 40px rgba(43,39,35,.10);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#1c1a17; --surface:#26231f; --surface2:#211e1b; --ink:#ede8de; --muted:#b8afa3;
+      --teal:#23201c; --teal2:#8a7e6e; --coral:#b9976b; --coral-soft:#3a332a; --amber:#c2a87f;
+      --teal-soft:#33302a; --line:#3e3933; --chip:#2b2823; --good:#a8b09a;
+      --shadow:0 18px 40px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  button,select,input,textarea{font:inherit}
+  button,select,a.btn{min-height:44px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  .mono{font-family:"JetBrains Mono",monospace;letter-spacing:.02em}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:800;font-size:15px;padding:12px 20px;border-radius:999px;border:2px solid transparent;cursor:pointer}
+  .btn-coral{background:var(--coral);color:#fff}
+  .btn-line{background:var(--chip);color:var(--ink);border-color:var(--line)}
+  .btn-ghost{background:transparent;color:#ede8de;border-color:rgba(237,232,222,.35)}
+
+  /* hero: video first, like working editor portfolios */
+  .hero{background:var(--teal);color:#ede8de;padding:48px 0 56px}
+  @media(min-width:760px){.hero{padding:64px 0 72px}}
+  .hero-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 32px;margin-bottom:32px}
+  .hero h1{font-size:clamp(40px,7vw,72px);line-height:.98;font-weight:900;letter-spacing:-.025em;margin:0}
+  .hero .role{font-size:clamp(16px,2.4vw,19px);color:#d6cfc0;margin:14px 0 0;max-width:44ch}
+  .hero .contact{flex:none;padding-bottom:4px}
+  .video{position:relative;aspect-ratio:16/9;background:#141210;border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+  .hero-caption{margin-top:20px;max-width:72ch}
+  .hero-caption .vtitle{font-size:clamp(18px,2.6vw,24px);font-weight:800;line-height:1.25;margin:0 0 6px;color:#f5f1e8}
+  .hero-caption .vsub{margin:0;font-size:15px;color:#c9c0af}
+  .hero-caption .vsub strong{color:#ede8de}
+
+  /* sections */
+  section{padding:64px 0 0}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-top:2px solid var(--ink);padding-top:16px;margin-bottom:28px}
+  .sec-head h2{font-size:clamp(22px,3.4vw,30px);line-height:1.1;font-weight:900;letter-spacing:-.015em;margin:0}
+  .sec-head .mono{font-size:12px;color:var(--muted);white-space:nowrap}
+
+  /* selected work */
+  .work{display:grid;grid-template-columns:1fr;gap:36px}
+  @media(min-width:820px){.work{grid-template-columns:1fr 1fr;gap:28px}}
+  .work .video{border-radius:14px;box-shadow:var(--shadow)}
+  .still{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:var(--teal);color:#ede8de;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;box-shadow:var(--shadow)}
+  .still::before{content:"";position:absolute;inset:14px;border:1px solid rgba(185,151,107,.45);border-radius:8px;pointer-events:none}
+  .still .s-event{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin:0 0 12px}
+  .still .s-title{font-size:clamp(24px,3.6vw,34px);font-weight:900;line-height:1.08;letter-spacing:-.01em;margin:0 0 10px;max-width:16ch}
+  .still .s-date{font-size:14px;color:#d6cfc0;margin:0}
+  .meta{margin-top:14px}
+  .meta h3{font-size:18px;font-weight:800;line-height:1.3;margin:0 0 4px}
+  .meta .desc{margin:0 0 6px;color:var(--muted);font-size:15px}
+  .meta .roles{margin:0;font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--coral)}
+
+  /* services strip */
+  .svc-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+  @media(min-width:820px){.svc-list{grid-template-columns:repeat(4,1fr)}}
+  .svc-list li{font-size:15.5px;font-weight:700;padding:14px 2px;border-bottom:1px solid var(--line)}
+  .svc-list li span{display:block;color:var(--muted);font-weight:500;font-size:13.5px;margin-top:2px}
+
+  /* about */
+  .about-lines p{font-size:clamp(18px,2.6vw,22px);font-weight:600;line-height:1.4;margin:0 0 8px;max-width:34ch}
+  .about-lines p:last-child{margin-bottom:0;color:var(--muted);font-weight:500;font-size:16.5px}
+
+  /* brief builder */
+  .builder{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+  .b-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:700px){.b-grid{grid-template-columns:1fr 1fr}}
+  label.fl{display:block;font-size:13px;font-weight:800;margin-bottom:6px;font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  select,input[type="text"],textarea{width:100%;padding:12px;border-radius:10px;border:1.5px solid var(--line);background:var(--chip);color:var(--ink);font-size:15px}
+  textarea{min-height:84px;resize:vertical}
+  .full{grid-column:1/-1}
+  .brief-out{background:var(--surface2);border:1.5px dashed var(--line);border-radius:12px;padding:16px;font-size:14.5px;white-space:pre-wrap;overflow-wrap:anywhere;min-height:90px}
+  .b-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .brief-intro{color:var(--muted);font-size:16px;margin:0 0 24px}
+  .direct{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+  .direct p{margin:0;color:var(--muted);font-size:15px}
+
+  footer{margin-top:72px;border-top:1px solid var(--line);padding:22px 0 36px;color:var(--muted);font-size:13.5px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between}
+  footer a{font-weight:700;text-decoration:none;color:var(--ink)}
+
+  .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(80px);background:var(--teal);color:#f5f1e8;font-weight:800;font-size:14px;padding:12px 20px;border-radius:999px;box-shadow:var(--shadow);transition:transform .25s ease;z-index:50;max-width:92vw;text-align:center}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.toast{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <h1>Nafisat Amuda</h1>
+        <p class="role">Video editor and AI video creator, Abuja, working worldwide.</p>
+      </div>
+      <div class="contact">
+        <a class="btn btn-coral" href="mailto:nafisatamudat@gmail.com?subject=Video%20project%20enquiry">Email nafisatamudat@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/LQarhRhwEo8" title="How a 22-Year-Old Stole $245 Million in Bitcoin and Burned $569,000 in One Night" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <div class="hero-caption">
+      <p class="vtitle">How a 22-Year-Old Stole $245 Million in Bitcoin and Burned $569,000 in One Night</p>
+      <p class="vsub"><strong>The Scam Dossier</strong>, a documentary series she edits and produces end to end.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section aria-labelledby="work-h">
+    <div class="sec-head">
+      <h2 id="work-h">Selected work</h2>
+      <span class="mono">Watch / Recent</span>
+    </div>
+    <div class="work">
+
+      <article>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/jJKv1s2y5qY" title="The Scam Dossier, Episode 4" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="meta">
+          <h3>The Scam Dossier, Episode 4</h3>
+          <p class="roles">Editing, voiceover direction, motion design</p>
+        </div>
+      </article>
+
+      <article>
+        <div class="still" role="img" aria-label="Title card for Afriqa Creative Showcase 2026, Abuja, 4 to 5 December 2026">
+          <p class="s-event">Event promo</p>
+          <p class="s-title">Afriqa Creative Showcase 2026</p>
+          <p class="s-date">Abuja, 4 to 5 December 2026</p>
+        </div>
+        <div class="meta">
+          <h3>Afriqa Creative Showcase 2026</h3>
+          <p class="desc">A presenter led AI promo video created for the event in Abuja.</p>
+          <p class="roles">AI video creation, presenting, editing</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section aria-labelledby="services-h">
+    <div class="sec-head">
+      <h2 id="services-h">Services</h2>
+      <span class="mono">Editing / AI video</span>
+    </div>
+    <ul class="svc-list">
+      <li>Short form editing <span>Reels, TikTok, Shorts</span></li>
+      <li>Long form editing <span>YouTube, events</span></li>
+      <li>Presenter led AI promos</li>
+      <li>AI voiceover videos</li>
+      <li>Product and event showcases</li>
+      <li>UGC style videos</li>
+      <li>Social media content <span>LinkedIn, Instagram</span></li>
+      <li>Subtitles and captions</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="about-h">
+    <div class="sec-head">
+      <h2 id="about-h">About</h2>
+      <span class="mono">Nafisat Amuda</span>
+    </div>
+    <div class="about-lines">
+      <p>Trained teacher turned video creator.</p>
+      <p>She makes complicated topics simple and clear on screen.</p>
+      <p>Editing in Premiere Pro and CapCut.</p>
+    </div>
+  </section>
+
+  <section id="brief" aria-labelledby="brief-h">
+    <div class="sec-head">
+      <h2 id="brief-h">Start a project</h2>
+      <span class="mono">Project brief</span>
+    </div>
+    <p class="brief-intro">Choose what you need and this builds a ready to send email.</p>
+    <div class="builder">
+      <div class="b-grid">
+        <div>
+          <label class="fl" for="bService">Service</label>
+          <select id="bService">
+            <option>Video editing</option>
+            <option>AI video creation</option>
+            <option>A mix of both</option>
+          </select>
+        </div>
+        <div>
+          <label class="fl" for="bFormat">Format</label>
+          <select id="bFormat">
+            <option>Reel, TikTok or Short (vertical)</option>
+            <option>YouTube video (long form)</option>
+            <option>Event video</option>
+            <option>Presenter led AI promo</option>
+            <option>AI voiceover video</option>
+            <option>Product or event showcase</option>
+            <option>UGC style video</option>
+            <option>Social media content video (LinkedIn or Instagram)</option>
+            <option>Subtitles and captions for my video</option>
+          </select>
+        </div>
+        <div>
+          <label class="fl" for="bCount">How many videos</label>
+          <select id="bCount">
+            <option>1 video</option>
+            <option>A few videos</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div>
+          <label class="fl" for="bSpeed">Your timing</label>
+          <select id="bSpeed">
+            <option>No set deadline</option>
+            <option>I have a deadline (added in the notes)</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div>
+          <label class="fl" for="bName">Your name or business</label>
+          <input type="text" id="bName" placeholder="Example: Adaeze, Wuse Salon">
+        </div>
+        <div>
+          <label class="fl" for="bFootage">Your footage or idea</label>
+          <input type="text" id="bFootage" placeholder="Example: I have 3 phone clips / I have a product, no footage">
+        </div>
+        <div class="full">
+          <label class="fl" for="bNotes">Anything else</label>
+          <textarea id="bNotes" placeholder="Links, style you like, deadline, anything that matters"></textarea>
+        </div>
+      </div>
+      <label class="fl" style="margin-top:18px">Your brief, ready to send</label>
+      <div class="brief-out" id="briefOut" aria-live="polite"></div>
+      <div class="b-actions">
+        <a class="btn btn-coral" id="briefMail" href="mailto:nafisatamudat@gmail.com">Email this brief to Nafisat</a>
+        <button class="btn btn-line" id="briefCopy" type="button">Copy the brief instead</button>
+      </div>
+    </div>
+    <div class="direct">
+      <p>Or write directly:</p>
+      <a class="btn btn-line" href="mailto:nafisatamudat@gmail.com?subject=Video%20project%20enquiry">nafisatamudat@gmail.com</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Nafisat Amuda, Abuja</span>
+    <a href="mailto:nafisatamudat@gmail.com">nafisatamudat@gmail.com</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
+
+<script>
+(function(){
+  var toast = document.getElementById("toast");
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove("show"); }, 2200);
+  }
+  function copyText(text, btn){
+    function done(){
+      if(btn){ var old = btn.textContent; btn.textContent = "Copied"; setTimeout(function(){ btn.textContent = old; }, 1800); }
+      showToast("Brief copied. Paste it into an email to nafisatamudat@gmail.com.");
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); done(); } catch(e){ showToast("Copy did not work here. Long press the brief text to copy it."); }
+      document.body.removeChild(ta);
+    }
+  }
+
+  var fields = ["bService","bFormat","bCount","bSpeed","bName","bFootage","bNotes"];
+  var out = document.getElementById("briefOut");
+  var mail = document.getElementById("briefMail");
+  function buildBrief(){
+    var v = {};
+    fields.forEach(function(id){ v[id] = document.getElementById(id).value.trim(); });
+    var lines = [];
+    lines.push("Hello Nafisat,");
+    lines.push("");
+    lines.push("I would like to start a video project.");
+    lines.push("Service: " + v.bService);
+    lines.push("Format: " + v.bFormat);
+    lines.push("How many videos: " + v.bCount);
+    lines.push("Timing: " + v.bSpeed);
+    if(v.bName){ lines.push("My name or business: " + v.bName); }
+    if(v.bFootage){ lines.push("My footage or idea: " + v.bFootage); }
+    if(v.bNotes){ lines.push("Notes: " + v.bNotes); }
+    lines.push("");
+    lines.push("Please reply with the next step.");
+    var text = lines.join("\n");
+    out.textContent = text;
+    mail.href = "mailto:nafisatamudat@gmail.com?subject=" + encodeURIComponent("Video project brief: " + v.bService) + "&body=" + encodeURIComponent(text);
+    return text;
+  }
+  fields.forEach(function(id){ document.getElementById(id).addEventListener("input", buildBrief); document.getElementById(id).addEventListener("change", buildBrief); });
+  buildBrief();
+  document.getElementById("briefCopy").addEventListener("click", function(){ copyText(buildBrief(), this); });
+})();
+</script>
+</body>
+</html>
